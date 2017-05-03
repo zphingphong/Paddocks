@@ -42,8 +42,6 @@ paddocksApp.directive('drawingBoard', function(){
         $scope.ctx.arc(thisX, thisY, 5, 0, Math.PI * 2);
         $scope.ctx.fillStyle = 'green';
         $scope.ctx.fill();
-        // $scope.ctx.stroke();
-        console.log($scope.points);
         // Calculate total area if the drawing become a polygon
         if($scope.points.length >= 3) {
           $scope.totalArea = calculateArea($scope.points);
