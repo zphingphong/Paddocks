@@ -15,6 +15,23 @@ paddocksApp.directive('drawingBoard', function(){
         $scope.currentY = $event.layerY;
       };
 
+      var calculateArea = function(points){
+        // TODO: handle edge cases. This calculation won't be correct if the user draw 1 point over another, or draw backward
+        // Ref: http://stackoverflow.com/questions/16285134/calculating-polygon-area
+        var total = 0;
+        for (var i = 0, l = points.length; i < l; i++) {
+          var addX = points[i].x;
+          var addY = points[i == points.length - 1 ? 0 : i + 1].y;
+          var subX = points[i == points.length - 1 ? 0 : i + 1].x;
+          var subY = points[i].y;
+
+          total += (addX * addY * 0.5);
+          total -= (subX * subY * 0.5);
+        }
+
+        return Math.abs(total);
+      };
+
       $scope.addPoint = function($event){
         var thisX = $event.layerX;
         var thisY = $event.layerY;
@@ -27,6 +44,10 @@ paddocksApp.directive('drawingBoard', function(){
         $scope.ctx.fill();
         // $scope.ctx.stroke();
         console.log($scope.points);
+        // Calculate total area if the drawing become a polygon
+        if($scope.points.length >= 3) {
+          $scope.totalArea = calculateArea($scope.points);
+        }
       };
     }]
   }
