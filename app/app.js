@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('Paddocks', [
+var paddocksApp = angular.module('Paddocks', [
   'ngRoute',
   'Paddocks.home',
   'Paddocks.collection'
