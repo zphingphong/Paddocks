@@ -1,0 +1,15 @@
+{
+  "name": "Paddocks",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Paddocks coding exercise",
+  "repository": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -p 8000 -c-1 ./app"
+  }
+}
