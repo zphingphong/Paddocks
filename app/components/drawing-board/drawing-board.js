@@ -8,6 +8,7 @@ paddocksApp.directive('drawingBoard', function(){
       $scope.points = [];
       $scope.board = document.getElementById('board');
       $scope.ctx = $scope.board.getContext('2d');
+      $scope.ctx.beginPath();
 
       $scope.updateCurrentLocation = function($event){
         $scope.currentX = $event.layerX;
@@ -21,9 +22,10 @@ paddocksApp.directive('drawingBoard', function(){
           x: thisX,
           y: thisY
         });
-        $scope.ctx.beginPath();
         $scope.ctx.arc(thisX, thisY, 5, 0, Math.PI * 2);
+        $scope.ctx.fillStyle = 'green';
         $scope.ctx.fill();
+        // $scope.ctx.stroke();
         console.log($scope.points);
       };
     }]
