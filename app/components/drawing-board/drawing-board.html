@@ -1,6 +1,16 @@
-<canvas id="board" width="500" height="500" ng-mousemove="updateCurrentLocation($event)" ng-click="addPoint($event)">
-</canvas>
-
-x: {{currentX}}
-y: {{currentY}}
-Total area: {{totalArea}} px <sup>2</sup>
+<div class="row">
+  <div class="col-sm-9">
+    <canvas id="board" width="500" height="500" ng-mousemove="updateCurrentLocation($event)" ng-click="addPoint($event)">
+    </canvas>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-9 text-center">
+    <small> x: {{currentX}} y: {{currentY}}</small>
+  </div>
+  <div class="col-sm-3">
+    Total area: {{totalArea}} px <sup>2</sup>
+  </div>
+</div>
