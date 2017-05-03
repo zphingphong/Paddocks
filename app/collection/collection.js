@@ -6,7 +6,6 @@ paddocksApp.controller('CollectionCtrl', ['$rootScope', '$scope', function($root
     for(var i = 0; i < collection.length; i++){
       var points = '';
       for(var j = 0; j < collection[i].length; j++){
-        console.log(collection[i][j]);
         points += collection[i][j].x + ',' + collection[i][j].y + ' ';
       }
       collectionData.push({
