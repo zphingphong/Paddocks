@@ -1,1 +1,8 @@
-<p>This is the partial for collection.</p>
+<div class="paddock-collection-container">
+  <div class="paddock" ng-repeat="paddock in collection">
+    <svg width="500" height="500">
+      <polygon points="{{paddock.points}}"
+               style="fill:LightGreen;stroke:MediumSeaGreen;stroke-width:2;fill-rule:evenodd;" />
+    </svg>
+  </div>
+</div>
