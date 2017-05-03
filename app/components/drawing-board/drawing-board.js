@@ -52,6 +52,7 @@ paddocksApp.directive('drawingBoard', function(){
 
       $scope.clearBoard = function() {
         $scope.points = [];
+        $scope.totalArea = 0;
         $scope.ctx.clearRect(0, 0, $scope.board.width, $scope.board.height);
         $scope.ctx.beginPath();
       };
