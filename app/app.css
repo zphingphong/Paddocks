@@ -3,3 +3,6 @@ drawing-board canvas {
   margin: 0 auto;
   display: block;
 }
+drawing-board button.btn {
+  margin-bottom: 5px;
+}

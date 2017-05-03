@@ -54,6 +54,10 @@ paddocksApp.directive('drawingBoard', function(){
         $scope.ctx.clearRect(0, 0, $scope.board.width, $scope.board.height);
         $scope.ctx.beginPath();
       };
+
+      $scope.save = function() {
+        $rootScope.$emit('savePaddock');
+      };
     }]
   }
 });
