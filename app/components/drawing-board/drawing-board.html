@@ -4,14 +4,15 @@
     </canvas>
   </div>
   <div class="col-sm-3">
+    <button class="btn btn-danger btn-block" type="button" ng-click="clearBoard()">Clear</button>
     <table class="table">
       <tr>
         <th></th>
-        <th>Coordinates</th>
+        <th class="text-center">Coordinates</th>
       </tr>
       <tr ng-repeat="point in points">
         <td>{{$index + 1}}</td>
-        <td>[{{point.x}},{{point.y}}]</td>
+        <td class="text-center">[{{point.x}},{{point.y}}]</td>
       </tr>
     </table>
   </div>

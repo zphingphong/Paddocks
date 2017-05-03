@@ -47,6 +47,12 @@ paddocksApp.directive('drawingBoard', function(){
           $scope.totalArea = calculateArea($scope.points);
         }
       };
+
+      $scope.clearBoard = function() {
+        $scope.points = [];
+        $scope.ctx.clearRect(0, 0, $scope.board.width, $scope.board.height);
+        $scope.ctx.beginPath();
+      };
     }]
   }
 });
