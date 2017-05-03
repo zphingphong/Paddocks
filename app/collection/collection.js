@@ -1,12 +1,6 @@
 'use strict';
 
-angular.module('Paddocks.collection', ['ngRoute'])
-
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/collection', {
-    templateUrl: '/collection/collection.html',
-    controller: 'CollectionCtrl'
-  });
-}])
-.controller('CollectionCtrl', [function() {
+paddocksApp.controller('CollectionCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
+  $scope.collection = JSON.parse(localStorage.getItem('paddockCollection'));
+  console.log($scope.collection);
 }]);

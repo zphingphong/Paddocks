@@ -7,6 +7,7 @@ paddocksApp.directive('drawingBoard', function(){
       $scope.currentY = 0;
       $scope.totalArea = 0;
       $scope.points = [];
+      $scope.collection = (localStorage.getItem('paddockCollection') != null) ? JSON.parse(localStorage.getItem('paddockCollection')) : [];
       $scope.board = document.getElementById('board');
       $scope.ctx = $scope.board.getContext('2d');
       $scope.ctx.beginPath();
@@ -56,7 +57,13 @@ paddocksApp.directive('drawingBoard', function(){
       };
 
       $scope.save = function() {
-        $rootScope.$emit('savePaddock');
+        $scope.collection.push($scope.points);
+        if (typeof(Storage) !== "undefined") {
+          localStorage.setItem('paddockCollection', JSON.stringify($scope.collection));
+        } else {
+          alert('Your browser doens\'t support saving data.');
+        }
+        $scope.clearBoard();
       };
     }]
   }
