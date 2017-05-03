@@ -5,6 +5,7 @@ paddocksApp.directive('drawingBoard', function(){
     controller: ['$rootScope', '$scope', function ($rootScope, $scope) {
       $scope.currentX = 0;
       $scope.currentY = 0;
+      $scope.totalArea = 0;
       $scope.points = [];
       $scope.board = document.getElementById('board');
       $scope.ctx = $scope.board.getContext('2d');
